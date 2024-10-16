@@ -42,12 +42,14 @@ const GroupPanel = ({ open, onClose, applyGrouping, clearGrouping }) => {
     <Dialog open={open} onClose={onClose} PaperProps={{
       sx: {
         position: 'absolute',
-        top: 30,
-        right: 20,
-        padding: 0,
+        top: 50,
+        right: 30,
+        padding: 3,
         borderRadius: '8px',
         boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)',
         background: 'linear-gradient(to bottom, #ffffff, #87ceeb)',
+        width:'300px',
+        height:'400px'
       },
     }}>
       <DialogTitle>
@@ -59,7 +61,7 @@ const GroupPanel = ({ open, onClose, applyGrouping, clearGrouping }) => {
         </Box>
       </DialogTitle>
       <DialogContent>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column'}}>
           {/* Category Field */}
           <Box sx={{
             border: "1px solid #007BFF",
@@ -91,7 +93,10 @@ const GroupPanel = ({ open, onClose, applyGrouping, clearGrouping }) => {
           </Box>
         </Box>
       </DialogContent>
-      <DialogActions>
+      <DialogActions sx={{
+        display:'flex',
+        flexDirection:'column',
+      }}>
         <Button onClick={handleClear}>Cancel</Button>
         <Button onClick={handleApply}>Apply Grouping</Button>
       </DialogActions>
